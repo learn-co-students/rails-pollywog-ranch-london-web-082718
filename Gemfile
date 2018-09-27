@@ -46,6 +46,8 @@ group :test, :development do
   gem "guard-rspec", require: false
   gem "thin", '~> 1.6.4'
   gem 'launchy', '~> 2.4.3'
+  gem 'bullet'
+  gem 'byebug'
 end
 
 group :production do
