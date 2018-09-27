@@ -3,6 +3,15 @@ class TadpolesController < ApplicationController
 
   # add your metamorphose action here
 
+  def metamorphose
+    @frog = Frog.create(name: @tadpole.name, color: @tadpole.color, pond_id: @tadpole.pond.id)
+    @tadpole.destroy
+    redirect_to frog_path(@frog)
+    #
+    # redirect_to frog_path(@frog)
+    # format.html { redirect_to @frog, notice: 'Frog was successfully updated.' }
+  end
+
   def index
     @tadpoles = Tadpole.all
   end
